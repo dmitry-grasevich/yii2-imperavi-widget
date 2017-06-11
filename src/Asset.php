@@ -1,6 +1,6 @@
 <?php
 
-namespace vova07\imperavi;
+namespace dmitrygrasevich\imperavi;
 
 use yii\web\AssetBundle;
 
@@ -9,14 +9,14 @@ use yii\web\AssetBundle;
  *
  * @author Vasile Crudu <bazillio07@yandex.ru>
  *
- * @link https://github.com/vova07
+ * @link https://github.com/dmitry-grasevich
  */
 class Asset extends AssetBundle
 {
 	/**
 	 * @inheritdoc
 	 */
-	public $sourcePath = '@vova07/imperavi/assets';
+	public $sourcePath = '@dmitrygrasevich/imperavi/assets';
 
 	/**
 	 * @var string Redactor language

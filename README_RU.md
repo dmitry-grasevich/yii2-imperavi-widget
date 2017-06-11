@@ -1,11 +1,11 @@
 # Imperavi Redactor Widget для Yii 2
 
-[![Latest Version](https://img.shields.io/github/release/vova07/yii2-imperavi-widget.svg?style=flat-square)](https://github.com/vova07/yii2-imperavi-widget/releases)
+[![Latest Version](https://img.shields.io/github/release/dmitry-grasevich/yii2-imperavi-widget.svg?style=flat-square)](https://github.com/dmitry-grasevich/yii2-imperavi-widget/releases)
 [![Software License](https://img.shields.io/badge/license-BSD-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/vova07/yii2-imperavi-widget/master.svg?style=flat-square)](https://travis-ci.org/vova07/yii2-imperavi-widget)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/vova07/yii2-imperavi-widget.svg?style=flat-square)](https://scrutinizer-ci.com/g/vova07/yii2-imperavi-widget/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/vova07/yii2-imperavi-widget.svg?style=flat-square)](https://scrutinizer-ci.com/g/vova07/yii2-imperavi-widget)
-[![Total Downloads](https://img.shields.io/packagist/dt/vova07/yii2-imperavi-widget.svg?style=flat-square)](https://packagist.org/packages/vova07/yii2-imperavi-widget)
+[![Build Status](https://img.shields.io/travis/dmitry-grasevich/yii2-imperavi-widget/master.svg?style=flat-square)](https://travis-ci.org/dmitry-grasevich/yii2-imperavi-widget)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/dmitry-grasevich/yii2-imperavi-widget.svg?style=flat-square)](https://scrutinizer-ci.com/g/dmitry-grasevich/yii2-imperavi-widget/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/dmitry-grasevich/yii2-imperavi-widget.svg?style=flat-square)](https://scrutinizer-ci.com/g/dmitry-grasevich/yii2-imperavi-widget)
+[![Total Downloads](https://img.shields.io/packagist/dt/dmitry-grasevich/yii2-imperavi-widget.svg?style=flat-square)](https://packagist.org/packages/dmitry-grasevich/yii2-imperavi-widget)
 
 `Imperavi Redactor Widget` — обёртка для [Imperavi Redactor](http://imperavi.com/redactor/),
 довольно неплохого WYSIWYG редактора.
@@ -21,13 +21,13 @@ OpenSource, но так как сообщество Yii купило OEM-лиц�
 Просто запустите в консоли команду:
 
 ```bash
-$ php composer.phar require --prefer-dist vova07/yii2-imperavi-widget "*"
+$ php composer.phar require --prefer-dist dmitry-grasevich/yii2-imperavi-widget "*"
 ```
 
 или добавьте
 
 ```json
-"vova07/yii2-imperavi-widget": "*"
+"dmitrygrasevich/yii2-imperavi-widget": "*"
 ```
 
 в `require` секцию вашего `composer.json` файла.
@@ -40,7 +40,7 @@ $ php composer.phar require --prefer-dist vova07/yii2-imperavi-widget "*"
 ### Как простой виджет ###
 
 ```php
-echo \vova07\imperavi\Widget::widget([
+echo \dmitrygrasevich\imperavi\Widget::widget([
     'name' => 'redactor',
     'settings' => [
         'lang' => 'ru',
@@ -56,7 +56,7 @@ echo \vova07\imperavi\Widget::widget([
 ### Как виджет ActiveForm ###
 
 ```php
-use vova07\imperavi\Widget;
+use dmitrygrasevich\imperavi\Widget;
 
 echo $form->field($model, 'content')->widget(Widget::className(), [
     'settings' => [
@@ -73,7 +73,7 @@ echo $form->field($model, 'content')->widget(Widget::className(), [
 ### Как виджет для уже существующего textarea ###
 
 ```php
-echo \vova07\imperavi\Widget::widget([
+echo \dmitrygrasevich\imperavi\Widget::widget([
     'selector' => '#my-textarea-id',
     'settings' => [
         'lang' => 'ru',
@@ -94,7 +94,7 @@ public function actions()
 {
     return [
         'images-get' => [
-            'class' => 'vova07\imperavi\actions\GetAction',
+            'class' => 'dmitrygrasevich\imperavi\actions\GetAction',
             'url' => 'http://my-site.com/images/', // URL адрес папки где хранятся изображения.
             'path' => '@alias/to/my/path', // Или абсолютный путь к папке с изображениями.
             'type' => GetAction::TYPE_IMAGES,
@@ -103,7 +103,7 @@ public function actions()
 }
 
 // View.php
-echo \vova07\imperavi\Widget::widget([
+echo \dmitrygrasevich\imperavi\Widget::widget([
     'selector' => '#my-textarea-id',
     'settings' => [
         'lang' => 'ru',
@@ -124,7 +124,7 @@ public function actions()
 {
     return [
         'files-get' => [
-            'class' => 'vova07\imperavi\actions\GetAction',
+            'class' => 'dmitrygrasevich\imperavi\actions\GetAction',
             'url' => 'http://my-site.com/files/', // URL адрес папки где хранятся файлы.
             'path' => '@alias/to/my/path', // Или абсолютный путь к папке с файлами.
             'type' => GetAction::TYPE_FILES,
@@ -133,7 +133,7 @@ public function actions()
 }
 
 // View.php
-echo \vova07\imperavi\Widget::widget([
+echo \dmitrygrasevich\imperavi\Widget::widget([
     'selector' => '#my-textarea-id',
     'settings' => [
         'lang' => 'ru',
@@ -154,7 +154,7 @@ public function actions()
 {
     return [
         'image-upload' => [
-            'class' => 'vova07\imperavi\actions\UploadAction',
+            'class' => 'dmitrygrasevich\imperavi\actions\UploadAction',
             'url' => 'http://my-site.com/images/', // URL адрес папки куда будут загружатся изображения.
             'path' => '@alias/to/my/path' // Или абсолютный путь к папке куда будут загружатся изображения.
         ],
@@ -162,7 +162,7 @@ public function actions()
 }
 
 // View.php
-echo \vova07\imperavi\Widget::widget([
+echo \dmitrygrasevich\imperavi\Widget::widget([
     'selector' => '#my-textarea-id',
     'settings' => [
         'lang' => 'ru',
@@ -180,7 +180,7 @@ public function actions()
 {
     return [
         'file-upload' => [
-            'class' => 'vova07\imperavi\actions\UploadAction',
+            'class' => 'dmitrygrasevich\imperavi\actions\UploadAction',
             'url' => 'http://my-site.com/files/', // URL адрес папки куда будут загружатся файлы.
             'path' => '@alias/to/my/path', // Или абсолютный путь к папке куда будут загружатся файлы.
             'uploadOnlyImage' => false, // Для загрузки не только изображений.
@@ -189,7 +189,7 @@ public function actions()
 }
 
 // View.php
-echo \vova07\imperavi\Widget::widget([
+echo \dmitrygrasevich\imperavi\Widget::widget([
     'selector' => '#my-textarea-id',
     'settings' => [
         'lang' => 'ru',
@@ -204,7 +204,7 @@ echo \vova07\imperavi\Widget::widget([
 ### Add custom plugins ###
 
 ```php
-echo \vova07\imperavi\Widget::widget([
+echo \dmitrygrasevich\imperavi\Widget::widget([
     'selector' => '#my-textarea-id',
     'settings' => [
         'lang' => 'ru',
@@ -236,7 +236,7 @@ $ phpunit
 
 ## Авторство
 
-- [Vasile Crudu](https://github.com/vova07)
+- [Vasile Crudu](https://github.com/dmitry-grasevich)
 - [Все участники](../../contributors)
 
 ## Лицензия
