@@ -26,7 +26,7 @@ $ php composer.phar require --prefer-dist dmitry-grasevich/yii2-imperavi-widget 
 or add
 
 ```json
-"dmitrygrasevich/yii2-imperavi-widget": "*"
+"dmitry-grasevich/yii2-imperavi-widget": "*"
 ```
 
 to the require section of your `composer.json` file.
